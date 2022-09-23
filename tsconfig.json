@@ -13,7 +13,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
-    //"noEmit": true,
     "jsx": "react-jsxdev",
     "sourceMap": false,
     "noImplicitAny": true,
@@ -32,8 +31,8 @@
       "@components/*": ["js/components/*"],
       "@pages/*": ["js/pages/*"],
       "@landmarks/*": ["js/landmarks/*"],
-      "@interfaces/*": ["js/interfaces/*"],
-      "@constants/*": ["js/constants/*"],
+      "@interfaces": ["js/interfaces/index.ts"],
+      "@constants": ["js/constants/index.ts"],
       "@scss/*": ["scss/*"],
       "@scss-variables": ["scss/variables.scss"],
       "@images/*": ["assets/images/*"],
@@ -41,5 +40,5 @@
       "@assets/*": ["assets/*"]
     }
   },
-  "include": ["src/*", "modules/*"]
+  "include": ["./src/**/*", "./modules/**/*"]
 }
