@@ -19,7 +19,8 @@ module.exports = (env) => ({
     alias: {
       '@components': path.resolve(srcPath, 'js/components'),
       '@pages': path.resolve(srcPath, 'js/pages'),
-      '@landmarks': path.resolve(srcPath, 'js/landmarks'),
+      '@interfaces': path.resolve(srcPath, 'js/interfaces'),
+      '@constants': path.resolve(srcPath, 'js/constants'),
       '@scss': path.resolve(srcPath, 'scss/'),
       '@assets': path.resolve(srcPath, 'assets/'),
       '@scss-variables': path.resolve(srcPath, 'scss/variables'),

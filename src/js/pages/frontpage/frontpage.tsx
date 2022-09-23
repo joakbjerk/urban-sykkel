@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
-import "./frontpage.scss";
+import React, { ReactElement } from 'react';
+import './frontpage.scss';
 
 const Frontpage = (): ReactElement => {
   return (
     <>
-      <h1>Webpack with TypeScript</h1>
+      <h1>Bicycle rental</h1>
     </>
   );
 };
