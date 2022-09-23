@@ -21,6 +21,7 @@ module.exports = (env) => ({
       '@pages': path.resolve(srcPath, 'js/pages'),
       '@interfaces': path.resolve(srcPath, 'js/interfaces'),
       '@constants': path.resolve(srcPath, 'js/constants'),
+      '@data': path.resolve(srcPath, 'js/data'),
       '@scss': path.resolve(srcPath, 'scss/'),
       '@assets': path.resolve(srcPath, 'assets/'),
       '@scss-variables': path.resolve(srcPath, 'scss/variables'),
