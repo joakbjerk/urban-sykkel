@@ -9,7 +9,14 @@ function createBicycles(amount: number, type: BicycleTypes, size: BicycleSizes):
   const stopIndex = amount + 1;
 
   for (creationIndex; creationIndex < stopIndex; creationIndex++) {
-    bicycles.push({ id: `${type}-${size}-${creationIndex}`, name: `${capitalizeFirstLetter(type)} ${capitalizeFirstLetter(size)}`, type, size });
+    bicycles.push({
+      id: `${type}-${size}-${creationIndex}`,
+      name: `${capitalizeFirstLetter(type)} ${capitalizeFirstLetter(size)}`,
+      type,
+      size,
+      isBooked: false,
+      bookingDuration: '',
+    });
   }
 
   return bicycles;

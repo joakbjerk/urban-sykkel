@@ -5,6 +5,8 @@ interface Bicycle {
   name: string;
   type: BicycleTypes;
   size: BicycleSizes;
+  isBooked: boolean;
+  bookingDuration: string;
 }
 
 export default Bicycle;
