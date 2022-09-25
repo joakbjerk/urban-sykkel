@@ -34,6 +34,8 @@
       "@interfaces": ["js/interfaces/index.ts"],
       "@constants": ["js/constants/index.ts"],
       "@context": ["js/context/index.ts"],
+      "@hooks": ["js/hooks/index.ts"],
+      "@reducers": ["js/reducers/index.ts"],
       "@utils": ["js/utils/index.ts"],
       "@data": ["js/data/index.ts"],
       "@routing": ["js/routing/index.ts"],

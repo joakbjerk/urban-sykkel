@@ -28,6 +28,8 @@ module.exports = (env) => ({
       '@interfaces': path.resolve(jsPath, 'interfaces/'),
       '@constants': path.resolve(jsPath, 'constants/'),
       '@context': path.resolve(jsPath, 'context/'),
+      '@hooks': path.resolve(jsPath, 'hooks/'),
+      '@reducers': path.resolve(jsPath, 'reducers/'),
       '@routing': path.resolve(jsPath, 'routing/'),
       '@utils': path.resolve(jsPath, 'utils/'),
       '@data': path.resolve(jsPath, 'data/'),

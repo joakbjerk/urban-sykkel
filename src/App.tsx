@@ -20,10 +20,7 @@ const App = (): ReactElement => {
         <main>
           <Routes>
             <Route index element={<Frontpage />} />
-            <Route path={Paths.Booking} element={<Booking />}>
-              <Route path=":bicycleId" element={<BookingDetails />} />
-              <Route path={Paths.MyBookings} element={<MyBookings />} />
-            </Route>
+            <Route path={Paths.MyBookings} element={<MyBookings />} />
             <Route path={Paths.NotFound} element={<NotFound />} />
           </Routes>
         </main>
