@@ -4,6 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const srcPath = path.resolve(__dirname, './src');
+const jsPath = path.resolve(srcPath, './js');
+const uiPath = path.resolve(jsPath, './ui');
+const scssPath = path.resolve(srcPath, './scss');
+const assetsPath = path.resolve(srcPath, './assets');
 const distPath = path.resolve(__dirname, './dist');
 
 module.exports = (env) => ({
@@ -17,16 +21,18 @@ module.exports = (env) => ({
   devtool: env.mode === 'development' ? 'eval-source-map' : false,
   resolve: {
     alias: {
-      '@components': path.resolve(srcPath, 'js/components'),
-      '@pages': path.resolve(srcPath, 'js/pages'),
-      '@interfaces': path.resolve(srcPath, 'js/interfaces'),
-      '@constants': path.resolve(srcPath, 'js/constants'),
-      '@data': path.resolve(srcPath, 'js/data'),
-      '@scss': path.resolve(srcPath, 'scss/'),
-      '@assets': path.resolve(srcPath, 'assets/'),
-      '@scss-variables': path.resolve(srcPath, 'scss/variables'),
-      '@images': path.resolve(srcPath, 'assets/images'),
-      '@fonts': path.resolve(srcPath, 'assets/fonts'),
+      '@components': path.resolve(uiPath, 'components/'),
+      '@pages': path.resolve(uiPath, 'pages/'),
+      '@landmarks': path.resolve(uiPath, 'landmarks/'),
+      '@interfaces': path.resolve(jsPath, 'interfaces/'),
+      '@constants': path.resolve(jsPath, 'constants/'),
+      '@utils': path.resolve(jsPath, 'utils/'),
+      '@data': path.resolve(jsPath, 'data/'),
+      '@scss': path.resolve(scssPath),
+      '@scss-variables': path.resolve(scssPath, 'variables/'),
+      '@assets': path.resolve(assetsPath),
+      '@images': path.resolve(assetsPath, 'images'),
+      '@fonts': path.resolve(assetsPath, 'fonts'),
     },
     extensions: ['.js', '.ts', '.tsx'],
   },
