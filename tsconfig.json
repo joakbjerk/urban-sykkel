@@ -36,6 +36,7 @@
       "@context": ["js/context/index.ts"],
       "@utils": ["js/utils/index.ts"],
       "@data": ["js/data/index.ts"],
+      "@routing": ["js/routing/index.ts"],
       "@scss/*": ["scss/*"],
       "@scss-variables": ["scss/variables/variables.scss"],
       "@images/*": ["assets/images/*"],
