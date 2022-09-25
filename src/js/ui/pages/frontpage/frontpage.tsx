@@ -1,17 +1,17 @@
 import React, { ReactElement } from 'react';
 
-import { BicycleData } from '@data';
+import { useBicycles } from '@context';
+import { BicycleCard } from '@components';
 
 import './frontpage.scss';
 
 const Frontpage = (): ReactElement => {
+  const { bicycles } = useBicycles();
+
   return (
     <div className="bicycle-grid">
-      {BicycleData.map(({ id, name, size, type }) => (
-        <article className="bicycle-card" key={`bicycle-${id}`}>
-          <p>{name}</p>
-          <p>{type}</p>
-        </article>
+      {bicycles.map(({ id, ...rest }) => (
+        <BicycleCard key={`bicycle-${id}`} id={id} {...rest} />
       ))}
     </div>
   );
