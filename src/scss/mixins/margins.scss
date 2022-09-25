@@ -1,0 +1,25 @@
+@import '@scss-variables/margins.scss';
+@import '@scss-mixins/breakpoints.scss';
+
+@mixin main-content-side-margins($side-margins) {
+  margin-left: $side-margins;
+  margin-right: $side-margins;
+}
+
+@mixin main-side-content-margins() {
+  @include smaller-than(1880px + ($side-margins-large * 2)) {
+    @include main-content-side-margins($side-margins-large);
+  }
+
+  @include smaller-than(1420px) {
+    @include main-content-side-margins($side-margins-medium);
+  }
+
+  @include smaller-than(720px + ($side-margins-small * 2)) {
+    @include main-content-side-margins($side-margins-small);
+  }
+
+  @include smaller-than(520px + ($side-margins-x-small * 2)) {
+    @include main-content-side-margins($side-margins-x-small);
+  }
+}

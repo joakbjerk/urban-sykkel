@@ -1,5 +1,6 @@
 @import '@scss/fonts.scss';
 @import '@scss-variables/colors.scss';
+@import '@scss-mixins/margins.scss';
 
 * {
   margin: 0;
@@ -50,4 +51,8 @@ button {
   &:hover {
     filter: brightness(1.05);
   }
+}
+
+main {
+  @include main-side-content-margins();
 }

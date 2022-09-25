@@ -1,3 +1,15 @@
+@import '@scss-mixins/breakpoints.scss';
+@import '@scss-variables/sizes.scss';
+@import '@scss-variables/margins.scss';
+
+.filter-menu {
+  margin: 0 auto;
+  max-width: $max-content-width;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
 .filter-menu-buttons {
   display: flex;
   flex-flow: row wrap;

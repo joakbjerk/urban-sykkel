@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Frontpage, NotFound, MyBookings } from '@pages';
-import { Header, Footer } from '@landmarks';
+import { Header } from '@landmarks';
 import { BicyclesProvider } from '@context';
 import { Paths } from '@routing';
 
@@ -24,7 +24,6 @@ const App = (): ReactElement => {
             <Route path={Paths.NotFound} element={<NotFound />} />
           </Routes>
         </main>
-        <Footer />
       </Router>
     </BicyclesProvider>
   );

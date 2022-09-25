@@ -37,7 +37,7 @@ const FilterMenu = (): ReactElement => {
   }
 
   return (
-    <section>
+    <section className="filter-menu">
       <h2>Filter by</h2>
       <div className="filter-menu-buttons">
         {filterButtonsData.map(({ label, type, value }) => (

@@ -4,6 +4,7 @@ import { HoursBooking } from '@components';
 import { useBicycles } from '@context';
 import { BookingTypes } from '@constants';
 import { BookingDuration } from '@interfaces';
+import { getDateTimeFromBooking } from '@utils';
 
 import './booking-panel.scss';
 
@@ -18,7 +19,6 @@ const BookingPanel = ({ bicycleId }: BookingPanelProps): ReactElement => {
   const { bookBicycle } = useBicycles();
 
   function onHourChange(amount: number): void {
-    console.log('Heihå');
     setBookingDuration({ type: BookingTypes.hour, amount });
   }
 
@@ -45,7 +45,10 @@ const BookingPanel = ({ bicycleId }: BookingPanelProps): ReactElement => {
         <input type="checkbox" onChange={onCheck} checked={bookingDuration.type === BookingTypes.week} value={BookingTypes.week} /> One week
       </label>
       <button type="button" className="booking-button-confirm" onClick={onSubmit}>
-        Book for {bookingDuration.amount} {bookingDuration.type}
+        Book for{' '}
+        <time dateTime={getDateTimeFromBooking(bookingDuration)}>
+          {bookingDuration.amount} {bookingDuration.type}
+        </time>
       </button>
     </form>
   );

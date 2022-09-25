@@ -1,3 +1,7 @@
+@import '@scss-variables/colors.scss';
+@import '@scss-variables/margins.scss';
+@import '@scss-mixins/breakpoints.scss';
+
 .bicycle-card {
   $borde-radius: 4px;
 
@@ -21,11 +25,49 @@
   }
 }
 
+.bicycle-card-name {
+  border-bottom: 1px solid $red;
+  padding-bottom: 20px;
+}
+
 .bicycle-card-data {
   padding: 16px 10px;
+  height: calc(100% - 250px);
 }
 
 .bicycle-cards-hours {
   display: flex;
   flex-flow: row nowrap;
+}
+
+.booked-disclaimer {
+  color: $red;
+  font-style: italic;
+  font-size: 2.5rem;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  height: calc(100% - (16px * 2));
+  width: calc(100% - (10px * 2));
+}
+
+.cancel-booking-button {
+  background-color: $red;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #fff;
+
+  margin-top: 14px;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  @include smaller-than(520px + ($side-margins-x-small * 2)) {
+    width: 100%;
+    padding: 20px;
+  }
 }

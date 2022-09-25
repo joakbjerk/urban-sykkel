@@ -11,12 +11,12 @@ const Header = (): ReactElement => {
       <nav>
         <ul className="nav-list">
           <li>
-            <NavLink className="nav-link" to={Paths.Index}>
+            <NavLink className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} to={Paths.Index}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to={Paths.MyBookings}>
+            <NavLink className="nav-link" to={`/${Paths.MyBookings}`}>
               My Bookings
             </NavLink>
           </li>

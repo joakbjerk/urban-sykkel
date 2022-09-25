@@ -1,9 +1,9 @@
 @import '@scss-variables/colors.scss';
+@import '@scss-variables/margins.scss';
+@import '@scss-mixins/breakpoints.scss';
 
 .booking-panel {
   margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid $red;
 
   display: flex;
   flex-flow: column;
@@ -29,4 +29,9 @@
 
 .booking-button-confirm {
   background-color: $green;
+
+  @include smaller-than(520px + ($side-margins-x-small * 2)) {
+    width: 100%;
+    padding: 20px;
+  }
 }

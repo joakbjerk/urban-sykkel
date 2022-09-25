@@ -5,15 +5,17 @@ import { BicycleCard, BicycleGrid } from '@components';
 import { useBicycles } from '@context';
 import { Paths } from '@routing';
 
+import './my-bookings.scss';
+
 const MyBookings = (): ReactElement => {
   const { getMyBookings } = useBicycles();
 
   const bookedBicycles = getMyBookings();
 
   return (
-    <>
-      <h2>My bookings!</h2>
-      <Link to={Paths.Index}>Back frontpage</Link>
+    <section className="my-bookings">
+      <h2>My bookings</h2>
+
       {bookedBicycles.length > 0 ? (
         <BicycleGrid>
           {bookedBicycles.map(({ id, ...rest }) => (
@@ -21,9 +23,11 @@ const MyBookings = (): ReactElement => {
           ))}
         </BicycleGrid>
       ) : (
-        <p>You have no booked bikes</p>
+        <p>
+          You have no booked bikes <Link to={Paths.Index}>go back to book</Link>.
+        </p>
       )}
-    </>
+    </section>
   );
 };
 

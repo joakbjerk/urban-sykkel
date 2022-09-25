@@ -1,4 +1,8 @@
 @import '@scss-variables/colors.scss';
+@import '@scss-variables/sizes.scss';
+@import '@scss-variables/margins.scss';
+@import '@scss-mixins/breakpoints.scss';
+@import '@scss-mixins/margins.scss';
 
 header {
   height: 60px;
@@ -7,6 +11,12 @@ header {
   padding: 16px;
 
   box-shadow: 2px 2px 2px 0 rgba($black, 0.6);
+}
+
+nav {
+  margin: 0 auto;
+  max-width: $max-content-width;
+  @include main-side-content-margins();
 }
 
 .nav-list {
@@ -18,11 +28,12 @@ header {
 }
 
 .nav-link {
-  color: $black;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
 
   &.active {
     text-decoration: underline;
+    text-decoration-color: $yellow;
   }
 }
