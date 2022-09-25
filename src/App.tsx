@@ -2,31 +2,34 @@ import React, { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { BookingPage, Frontpage, NotFound } from '@pages';
+import { Booking, BookingDetails, Frontpage, NotFound, MyBookings } from '@pages';
 import { Header, Footer } from '@landmarks';
 import { BicyclesProvider } from '@context';
+import { Paths } from '@routing';
 
 import './App.scss';
-
 const renderTarget = document.querySelector('#render');
 
 if (!renderTarget) throw new Error('Could not find the render target!');
 
 const App = (): ReactElement => {
   return (
-    <Router>
-      <BicyclesProvider>
+    <BicyclesProvider>
+      <Router>
         <Header />
         <main>
           <Routes>
             <Route index element={<Frontpage />} />
-            <Route path="booking" element={<BookingPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path={Paths.Booking} element={<Booking />}>
+              <Route path=":bicycleId" element={<BookingDetails />} />
+              <Route path={Paths.MyBookings} element={<MyBookings />} />
+            </Route>
+            <Route path={Paths.NotFound} element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
-      </BicyclesProvider>
-    </Router>
+      </Router>
+    </BicyclesProvider>
   );
 };
 
