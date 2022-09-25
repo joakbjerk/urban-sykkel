@@ -26,6 +26,7 @@ module.exports = (env) => ({
       '@landmarks': path.resolve(uiPath, 'landmarks/'),
       '@interfaces': path.resolve(jsPath, 'interfaces/'),
       '@constants': path.resolve(jsPath, 'constants/'),
+      '@context': path.resolve(jsPath, 'context/'),
       '@utils': path.resolve(jsPath, 'utils/'),
       '@data': path.resolve(jsPath, 'data/'),
       '@scss': path.resolve(scssPath),

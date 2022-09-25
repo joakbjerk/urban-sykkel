@@ -33,6 +33,7 @@
       "@landmarks": ["js/ui/landmarks/index.ts"],
       "@interfaces": ["js/interfaces/index.ts"],
       "@constants": ["js/constants/index.ts"],
+      "@context": ["js/context/index.ts"],
       "@utils": ["js/utils/index.ts"],
       "@data": ["js/data/index.ts"],
       "@scss/*": ["scss/*"],

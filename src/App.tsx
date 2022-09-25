@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Frontpage } from '@pages';
 import { Header, Footer } from '@landmarks';
+import { BicyclesProvider } from '@context';
 
 import './App.scss';
 
@@ -13,8 +14,8 @@ if (!renderTarget) throw new Error('Could not find the render target!');
 
 const App = (): ReactElement => {
   return (
-    <>
-      <Router>
+    <Router>
+      <BicyclesProvider>
         <Header />
         <main>
           <Routes>
@@ -22,8 +23,8 @@ const App = (): ReactElement => {
           </Routes>
         </main>
         <Footer />
-      </Router>
-    </>
+      </BicyclesProvider>
+    </Router>
   );
 };
 
