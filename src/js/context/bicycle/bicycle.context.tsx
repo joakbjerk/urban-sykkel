@@ -5,6 +5,7 @@ import { BicycleData } from '@data';
 
 interface BicyclesContext {
   bicycles: Bicycle[];
+  bookBicycle: (id: string) => void;
 }
 
 interface BicyclesProviderProps {
@@ -24,5 +25,16 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
     setBicycles(BicycleData);
   }, []);
 
-  return <BicyclesContext.Provider value={{ bicycles }}>{children}</BicyclesContext.Provider>;
+  function bookBicycle(id: string): void {
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: true } : bicycle));
+
+    setBicycles(updatedBicycles);
+  }
+
+  function cancelBook(id: string): void {
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: false } : bicycle));
+    setBicycles(updatedBicycles);
+  }
+
+  return <BicyclesContext.Provider value={{ bicycles, bookBicycle }}>{children}</BicyclesContext.Provider>;
 };
