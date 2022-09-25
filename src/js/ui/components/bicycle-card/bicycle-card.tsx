@@ -5,6 +5,22 @@ import { Bicycle } from '@interfaces';
 import { useBicycles } from '@context';
 import { Paths } from '@routing';
 
+import ElectricLargeImg from '@assets/images/electric-large.jpg';
+import ElectricMediumImg from '@assets/images/electric-medium.jpg';
+import ElectricSmallImg from '@assets/images/electric-small.jpg';
+import RegularLargeImg from '@assets/images/regular-large.jpg';
+import RegularMediumImg from '@assets/images/regular-medium.jpg';
+import RegularSmallImg from '@assets/images/regular-small.jpg';
+
+const BicycelImages = {
+  'electric-large': ElectricLargeImg,
+  'electric-medium': ElectricMediumImg,
+  'electric-small': ElectricSmallImg,
+  'regular-large': RegularLargeImg,
+  'regular-medium': RegularMediumImg,
+  'regular-small': RegularSmallImg,
+};
+
 import './bicycle-card.scss';
 
 const MAX_HOURS = 23;
@@ -17,6 +33,7 @@ const BicycleCard = ({ id, name, size, type, isBooked, bookingDuration }: Bicycl
 
   return (
     <article className="bicycle-card">
+      <img src={BicycelImages[`${type}-${size}`]} alt={`Image of a ${size} ${type} bicycle`} />
       <h2>{name}</h2>
       <p>{size}</p>
       <p>{type}</p>

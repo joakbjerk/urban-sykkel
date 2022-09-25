@@ -15,7 +15,7 @@ interface FilterButtonData {
 
 const filterButtonsData: FilterButtonData[] = [
   { label: 'Electric', type: FilterKeys.type, value: BicycleTypes.electric },
-  { label: 'Normal', type: FilterKeys.type, value: BicycleTypes.normal },
+  { label: 'Regular', type: FilterKeys.type, value: BicycleTypes.regular },
   { label: 'Large', type: FilterKeys.size, value: BicycleSizes.large },
   { label: 'Medium', type: FilterKeys.size, value: BicycleSizes.medium },
   { label: 'Small', type: FilterKeys.size, value: BicycleSizes.small },

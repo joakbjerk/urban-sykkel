@@ -1,5 +1,5 @@
 enum BicycleTypes {
-  normal = 'normal',
+  regular = 'regular',
   electric = 'electric',
 }
 

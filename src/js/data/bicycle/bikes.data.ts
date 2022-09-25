@@ -23,9 +23,9 @@ function createBicycles(amount: number, type: BicycleTypes, size: BicycleSizes):
 }
 
 //Normal bicycldes;
-export const largeNormallBicycles = createBicycles(4, BicycleTypes.normal, BicycleSizes.large);
-export const mediumNormalBicycles = createBicycles(4, BicycleTypes.normal, BicycleSizes.medium);
-export const smallNormalBicycles = createBicycles(3, BicycleTypes.normal, BicycleSizes.small);
+export const largeNormallBicycles = createBicycles(4, BicycleTypes.regular, BicycleSizes.large);
+export const mediumNormalBicycles = createBicycles(4, BicycleTypes.regular, BicycleSizes.medium);
+export const smallNormalBicycles = createBicycles(3, BicycleTypes.regular, BicycleSizes.small);
 
 //Electrical bicycles;
 export const largeElectricalBicycles = createBicycles(3, BicycleTypes.electric, BicycleSizes.large);
