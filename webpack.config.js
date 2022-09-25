@@ -35,6 +35,7 @@ module.exports = (env) => ({
       '@data': path.resolve(jsPath, 'data/'),
       '@scss': path.resolve(scssPath),
       '@scss-variables': path.resolve(scssPath, 'variables/'),
+      '@scss-mixins': path.resolve(scssPath, 'mixins/'),
       '@assets': path.resolve(assetsPath),
       '@images': path.resolve(assetsPath, 'images'),
       '@fonts': path.resolve(assetsPath, 'fonts'),

@@ -1,0 +1,28 @@
+@import '@scss-variables/colors.scss';
+
+header {
+  height: 60px;
+  background-color: $blue;
+  margin-bottom: 40px;
+  padding: 16px;
+
+  box-shadow: 2px 2px 2px 0 rgba($black, 0.6);
+}
+
+.nav-list {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+
+  list-style: none;
+}
+
+.nav-link {
+  color: $black;
+  text-decoration: none;
+  font-weight: 600;
+
+  &.active {
+    text-decoration: underline;
+  }
+}

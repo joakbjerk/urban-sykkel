@@ -1,0 +1,42 @@
+@import '@scss-variables/colors.scss';
+
+.hour-booking {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.hour-booking-input {
+  width: 40px;
+  text-align: center;
+
+  border: none;
+  border-bottom: 2px solid $red;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+.hour-booking-button {
+  $size: 20px;
+
+  height: $size;
+  width: $size;
+
+  border-radius: 50%;
+
+  color: #fff;
+  background-color: $blue;
+
+  display: block;
+
+  &:disabled {
+    filter: brightness(0.8);
+    cursor: not-allowed;
+  }
+}

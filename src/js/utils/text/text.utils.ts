@@ -4,3 +4,7 @@ export function capitalizeFirstLetter(text: string): string {
 
   return `${capitalizedFirstLetter}${restOfText}`;
 }
+
+export function getHoursLabel(hours: number): string {
+  return `hour${hours > 1 ? 's' : ''}`;
+}

@@ -1,4 +1,5 @@
 import { BicycleSizes, BicycleTypes } from '@constants';
+import { BookingDuration } from '@interfaces';
 
 interface Bicycle {
   id: string;
@@ -6,7 +7,7 @@ interface Bicycle {
   type: BicycleTypes;
   size: BicycleSizes;
   isBooked: boolean;
-  bookingDuration: string;
+  bookingDuration: BookingDuration | null;
 }
 
 export default Bicycle;

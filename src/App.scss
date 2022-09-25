@@ -15,6 +15,18 @@ body {
   color: $black;
 }
 
+input {
+  font-family: 'Open Sans', Sans-Serif;
+}
+input,
+button,
+a {
+  &:focus,
+  &:active {
+    outline: 4px solid #2dcaff;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -22,6 +34,10 @@ h4,
 h4,
 h6 {
   font-family: 'Ubuntu', Sans-Serif;
+}
+
+label {
+  cursor: pointer;
 }
 
 button {

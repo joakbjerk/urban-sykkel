@@ -1,0 +1,32 @@
+@import '@scss-variables/colors.scss';
+
+.booking-panel {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid $red;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.booking-panel-title {
+  font-weight: 400;
+}
+
+.booking-button,
+.booking-button-confirm {
+  padding: 8px 12px;
+
+  border-radius: 4px;
+  color: #fff;
+}
+
+.booking-button {
+  background-color: $blue;
+}
+
+.booking-button-confirm {
+  background-color: $green;
+}

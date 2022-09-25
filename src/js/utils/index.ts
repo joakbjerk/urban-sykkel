@@ -1,1 +1,1 @@
-export { capitalizeFirstLetter } from './text/text.utils';
+export { capitalizeFirstLetter, getHoursLabel } from './text/text.utils';

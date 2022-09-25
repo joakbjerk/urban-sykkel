@@ -27,7 +27,7 @@ const FilterMenu = (): ReactElement => {
 
   function toggleFilter(key: FilterKeys, value: BicycleSizes | BicycleTypes): void {
     const action = isFilterActive(value) ? FilterActions.remove : FilterActions.add;
-    console.log('Act', action);
+
     dispatchFilter({ action, key, value });
     setActiveFilters(action === FilterActions.add ? [...activeFilters, value] : activeFilters.filter((activeFilter) => activeFilter !== value));
   }

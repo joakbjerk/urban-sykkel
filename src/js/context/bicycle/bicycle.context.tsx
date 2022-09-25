@@ -1,12 +1,12 @@
 import React, { createContext, useContext, ReactElement, ReactNode, useRef, useState, useEffect } from 'react';
 
-import { Bicycle, FilterPayload } from '@interfaces';
+import { Bicycle, BookingDuration, FilterPayload } from '@interfaces';
 import { BicycleData } from '@data';
 import { useFilters } from '@hooks';
 
 interface BicyclesContext {
   bicycles: Bicycle[];
-  bookBicycle: (id: string, duration: string) => void;
+  bookBicycle: (id: string, duration: BookingDuration) => void;
   cancelBooking: (id: string) => void;
   getMyBookings: () => Bicycle[];
   getBicycleById: (id: string) => Bicycle | undefined;
@@ -38,30 +38,27 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
     const bicyclesToFilter = originalBicycles.current;
 
     if (!bicyclesToFilter) return;
-    console.log('Applying filter', filters);
+
+    const filterKeys = Object.keys(filters);
+
+    if (!filterKeys.length) return setBicycles(bicyclesToFilter);
+
     const filteredBicycles = bicyclesToFilter.filter((bicycle) => {
-      for (const filterKey in filters) {
-        if (!Object.hasOwn(filters, filterKey)) return;
-        const filtersArray = filters[filterKey];
-
-        if (!filtersArray.includes(bicycle[filterKey])) return false;
-      }
-
-      return true;
+      return filterKeys.every((key) => filters[key].includes(bicycle[key]));
     });
     console.log(filteredBicycles);
 
     setBicycles(filteredBicycles);
   }, [filters, originalBicycles]);
 
-  function bookBicycle(id: string, duraiton: string): void {
-    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: true, bookingDuration: duraiton } : bicycle));
+  function bookBicycle(id: string, bookingDuration: BookingDuration): void {
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: true, bookingDuration } : bicycle));
 
     setBicycles(updatedBicycles);
   }
 
   function cancelBooking(id: string): void {
-    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: false, bookingDuration: '' } : bicycle));
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: false, bookingDuration: null } : bicycle));
     setBicycles(updatedBicycles);
   }
 

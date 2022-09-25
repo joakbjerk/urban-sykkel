@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Booking, BookingDetails, Frontpage, NotFound, MyBookings } from '@pages';
+import { Frontpage, NotFound, MyBookings } from '@pages';
 import { Header, Footer } from '@landmarks';
 import { BicyclesProvider } from '@context';
 import { Paths } from '@routing';

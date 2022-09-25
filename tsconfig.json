@@ -41,6 +41,7 @@
       "@routing": ["js/routing/index.ts"],
       "@scss/*": ["scss/*"],
       "@scss-variables": ["scss/variables/variables.scss"],
+      "@scss-mixins": ["scss/mixins/mixins.scss"],
       "@images/*": ["assets/images/*"],
       "@fonts/*": ["assets/fonts/*"],
       "@assets/*": ["assets/*"]

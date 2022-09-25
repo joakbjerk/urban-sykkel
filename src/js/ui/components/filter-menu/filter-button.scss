@@ -1,13 +1,24 @@
 @import '@scss-variables/colors.scss';
 
 .filter-button {
-  background-color: $green;
+  background-color: transparent;
 
-  color: #fff;
+  border: 2px solid $green;
+  border-radius: 4px;
+
+  color: $black;
 
   padding: 8px 16px;
 
+  transition: 0.2s ease-in-out;
+
   &.active {
-    background-color: $red;
+    background-color: $green;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: $green;
+    color: #fff;
   }
 }

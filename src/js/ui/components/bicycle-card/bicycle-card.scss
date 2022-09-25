@@ -1,4 +1,6 @@
 .bicycle-card {
+  $borde-radius: 4px;
+
   display: flex;
   flex-flow: column;
 
@@ -6,11 +8,7 @@
 
   background-color: #fafafa;
 
-  padding: 8px;
-
-  button {
-    width: fit-content;
-  }
+  border-radius: $borde-radius;
 
   img {
     width: 100%;
@@ -19,9 +17,12 @@
 
     background-color: #fff;
 
-    margin-left: -8px;
-    margin-right: -8px;
+    border-radius: $borde-radius $borde-radius 0 0;
   }
+}
+
+.bicycle-card-data {
+  padding: 16px 10px;
 }
 
 .bicycle-cards-hours {
