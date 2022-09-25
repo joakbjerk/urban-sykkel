@@ -1,15 +1,15 @@
-import React, { ReactElement } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Frontpage from "@pages/frontpage/frontpage";
-import Header from "@components/header/header";
-import Footer from "@components/footer/footer";
+import React, { ReactElement } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import "./App.scss";
+import { Frontpage } from '@pages';
+import { Header, Footer } from '@landmarks';
 
-const renderTarget = document.querySelector("#render");
+import './App.scss';
 
-if (!renderTarget) throw new Error("Could not find the render target!");
+const renderTarget = document.querySelector('#render');
+
+if (!renderTarget) throw new Error('Could not find the render target!');
 
 const App = (): ReactElement => {
   return (
