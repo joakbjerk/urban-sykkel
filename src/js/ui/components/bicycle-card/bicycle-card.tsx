@@ -1,21 +1,19 @@
 import React, { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Bicycle } from '@interfaces';
-import { useBicycles } from '@context';
+import { Paths } from '@routing';
 
 import './bicycle-card.scss';
 
-const BicycleCard = ({ id, name, size, type, isBooked }: Bicycle): ReactElement => {
-  const { bookBicycle } = useBicycles();
-
+const BicycleCard = ({ id, name, size, type, bookingDuration }: Bicycle): ReactElement => {
   return (
     <article className="bicycle-card">
       <h2>{name}</h2>
       <p>{size}</p>
       <p>{type}</p>
-      <button disabled={isBooked} type="button" onClick={() => bookBicycle(id)}>
-        Book
-      </button>
+      <p>{bookingDuration}</p>
+      <Link to={`${Paths.Booking}/${id}`}>Book</Link>
     </article>
   );
 };

@@ -5,7 +5,10 @@ import { BicycleData } from '@data';
 
 interface BicyclesContext {
   bicycles: Bicycle[];
-  bookBicycle: (id: string) => void;
+  bookBicycle: (id: string, duration: string) => void;
+  cancelBooking: (id: string) => void;
+  getMyBookings: () => Bicycle[];
+  getBicycleById: (id: string) => Bicycle | undefined;
 }
 
 interface BicyclesProviderProps {
@@ -25,16 +28,24 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
     setBicycles(BicycleData);
   }, []);
 
-  function bookBicycle(id: string): void {
-    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: true } : bicycle));
+  function bookBicycle(id: string, duraiton: string): void {
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: true, bookingDuration: duraiton } : bicycle));
 
     setBicycles(updatedBicycles);
   }
 
-  function cancelBook(id: string): void {
-    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: false } : bicycle));
+  function cancelBooking(id: string): void {
+    const updatedBicycles = bicycles.map((bicycle) => (bicycle.id === id ? { ...bicycle, isBooked: false, bookingDuration: '' } : bicycle));
     setBicycles(updatedBicycles);
   }
 
-  return <BicyclesContext.Provider value={{ bicycles, bookBicycle }}>{children}</BicyclesContext.Provider>;
+  function getMyBookings(): Bicycle[] {
+    return bicycles.filter((bicycle) => bicycle.isBooked);
+  }
+
+  function getBicycleById(id: string): Bicycle | undefined {
+    return bicycles.find((bicycle) => bicycle.id === id);
+  }
+
+  return <BicyclesContext.Provider value={{ bicycles, bookBicycle, cancelBooking, getMyBookings, getBicycleById }}>{children}</BicyclesContext.Provider>;
 };
