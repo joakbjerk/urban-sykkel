@@ -46,7 +46,6 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
     const filteredBicycles = bicyclesToFilter.filter((bicycle) => {
       return filterKeys.every((key) => filters[key].includes(bicycle[key]));
     });
-    console.log(filteredBicycles);
 
     setBicycles(filteredBicycles);
   }, [filters, originalBicycles]);
