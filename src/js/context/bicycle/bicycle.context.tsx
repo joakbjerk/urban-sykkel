@@ -38,7 +38,7 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
     const bicyclesToFilter = originalBicycles.current;
 
     if (!bicyclesToFilter) return;
-
+    console.log('Applying filter', filters);
     const filteredBicycles = bicyclesToFilter.filter((bicycle) => {
       for (const filterKey in filters) {
         if (!Object.hasOwn(filters, filterKey)) return;
@@ -49,6 +49,7 @@ export const BicyclesProvider = ({ children }: BicyclesProviderProps): ReactElem
 
       return true;
     });
+    console.log(filteredBicycles);
 
     setBicycles(filteredBicycles);
   }, [filters, originalBicycles]);

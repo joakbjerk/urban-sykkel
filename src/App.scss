@@ -23,3 +23,15 @@ h4,
 h6 {
   font-family: 'Ubuntu', Sans-Serif;
 }
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}

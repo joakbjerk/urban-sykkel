@@ -1,0 +1,13 @@
+@import '@scss-variables/colors.scss';
+
+.filter-button {
+  background-color: $green;
+
+  color: #fff;
+
+  padding: 8px 16px;
+
+  &.active {
+    background-color: $red;
+  }
+}
