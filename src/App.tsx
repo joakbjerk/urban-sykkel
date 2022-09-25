@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Frontpage } from '@pages';
+import { BookingPage, Frontpage, NotFound } from '@pages';
 import { Header, Footer } from '@landmarks';
 import { BicyclesProvider } from '@context';
 
@@ -20,6 +20,8 @@ const App = (): ReactElement => {
         <main>
           <Routes>
             <Route index element={<Frontpage />} />
+            <Route path="booking" element={<BookingPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
